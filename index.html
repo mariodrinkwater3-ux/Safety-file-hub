@@ -4,36 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Safety File Hub</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
+      font-family: 'Roboto', sans-serif;
       background: #f9fafb;
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      background: #0a3d62;
+      background: linear-gradient(135deg, #0a3d62, #1e5a8a);
       color: white;
-      padding: 1.5rem;
+      padding: 3rem 1.5rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -50%; width: 200%; height: 100%;
+      background: rgba(255,255,255,0.1);
+      transform: skewX(-30deg);
+      animation: shine 6s infinite linear;
+    }
+
+    @keyframes shine {
+      0% { left: -50%; }
+      100% { left: 150%; }
+    }
+
+    header img {
+      max-width: 120px;
+      margin-bottom: 1rem;
     }
 
     header h1 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p.slogan {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ffd32a;
+      margin-top: 0.5rem;
     }
 
     nav {
       background: #1e5a8a;
-      padding: 0.5rem;
+      padding: 0.8rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -44,37 +76,43 @@
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #ffd32a;
-    }
+    nav a:hover { color: #ffd32a; }
 
     section {
       padding: 3rem 1.5rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
+      animation: fadeIn 1.5s ease;
     }
 
     section h2 {
       color: #0a3d62;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .services {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .services, .templates {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
     .card {
       background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
     footer {
@@ -82,7 +120,7 @@
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
     .btn {
@@ -90,33 +128,39 @@
       background: #1e5a8a;
       color: white;
       padding: 0.75rem 1.5rem;
-      border-radius: 5px;
+      border-radius: 30px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .btn:hover {
       background: #ffd32a;
       color: #0a3d62;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <header>
+    <!-- Replace with your real logo later -->
+    <img src="https://via.placeholder.com/120x120.png?text=Logo" alt="Safety File Hub Logo">
     <h1>Safety File Hub</h1>
     <p>Your partner in compliance, safety & workplace documentation</p>
+    <p class="slogan">Safety compliance the right way the 1st time</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#templates">Templates</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Us</h2>
     <p>
-      At <strong>Safety File Hub</strong>, we specialize in providing complete safety file solutions, 
+      At <strong>Safety File Hub</strong>, we provide complete safety file solutions, 
       compliance documentation, and workplace risk management support.  
       Our mission is to make compliance simple, professional, and stress-free.
     </p>
@@ -126,25 +170,50 @@
     <h2>Our Services</h2>
     <div class="services">
       <div class="card">
-        <h3>Safety File Compilation</h3>
+        <h3>📂 Safety File Compilation</h3>
         <p>Complete and customized safety files tailored to your project needs.</p>
       </div>
       <div class="card">
-        <h3>Risk Assessments</h3>
+        <h3>⚠️ Risk Assessments</h3>
         <p>Detailed workplace hazard identification and mitigation strategies.</p>
       </div>
       <div class="card">
-        <h3>Compliance Audits</h3>
+        <h3>✅ Compliance Audits</h3>
         <p>Ensure your site meets legal and regulatory health & safety standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="templates">
+    <h2>Templates</h2>
+    <p>
+      Save time with ready-to-use safety file templates. Download, customize, and use them immediately.  
+      (You can add PDFs or DOCX files here for people to download.)
+    </p>
+    <div class="templates">
+      <div class="card">
+        <h3>📝 Risk Assessment Template</h3>
+        <p>Basic editable template for project risk assessments.</p>
+        <a href="#" class="btn">Download</a>
+      </div>
+      <div class="card">
+        <h3>📑 Safety File Index</h3>
+        <p>Standard safety file index to help organize your documentation.</p>
+        <a href="#" class="btn">Download</a>
+      </div>
+      <div class="card">
+        <h3>📋 Method Statement Template</h3>
+        <p>Fill-in-the-blank template for creating method statements.</p>
+        <a href="#" class="btn">Download</a>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Have questions or need a safety file for your project? Get in touch with us today.</p>
-    <p><strong>Phone:</strong> <a href="tel:0718956089">071 895 6089</a></p>
-    <p><strong>Email:</strong> <a href="mailto:info@safetyfilehub.co.za">info@safetyfilehub.co.za</a></p>
+    <p>Have questions or need a safety file for your project? Get in touch today.</p>
+    <p><strong>📞 Phone:</strong> <a href="tel:0718956089">071 895 6089</a></p>
+    <p><strong>✉️ Email:</strong> <a href="mailto:info@safetyfilehub.co.za">info@safetyfilehub.co.za</a></p>
     <a href="mailto:info@safetyfilehub.co.za" class="btn">Send Us an Email</a>
   </section>
 
