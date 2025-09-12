@@ -16,11 +16,13 @@
         
         :root {
             --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #93c5fd;
             --secondary: #3b82f6;
             --accent: #f59e0b;
             --light: #f3f4f6;
             --dark: #1f2937;
-            --safety-red: #dc2626;
+            --white: #ffffff;
         }
         
         html {
@@ -30,7 +32,7 @@
         body {
             color: var(--dark);
             line-height: 1.6;
-            background-color: #f9fafb;
+            background-color: var(--white);
         }
         
         .container {
@@ -58,25 +60,20 @@
         }
         
         .btn:hover {
-            background-color: var(--secondary);
+            background-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .btn-accent {
-            background-color: var(--accent);
+        .btn-light {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
         
-        .btn-accent:hover {
-            background-color: #e99a0c;
-        }
-        
-        .btn-safety {
-            background-color: var(--safety-red);
-        }
-        
-        .btn-safety:hover {
-            background-color: #b91c1c;
+        .btn-light:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
         }
         
         .section-title {
@@ -98,7 +95,7 @@
         
         /* Header */
         header {
-            background-color: white;
+            background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
@@ -116,31 +113,45 @@
         .logo {
             display: flex;
             align-items: center;
+            text-decoration: none;
         }
         
         .logo-img {
-            height: 50px;
+            height: 60px;
             width: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: var(--safety-red);
-            font-size: 1.8rem;
-            margin-right: 10px;
-            background-color: #fef2f2;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: 2px solid var(--safety-red);
-        }
-        
-        .logo h1 {
-            font-size: 1.5rem;
             color: var(--primary);
+            font-size: 1.2rem;
+            margin-right: 10px;
+            background-color: var(--white);
+            padding: 5px;
+            border-radius: 5px;
+            border: 2px solid var(--primary);
         }
         
-        .logo span {
-            color: var(--safety-red);
+        .logo-img span {
+            display: block;
+            text-align: center;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+        
+        .logo-img .line1 {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .logo-img .line2 {
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+        }
+        
+        .logo-img .line3 {
+            color: var(--primary);
+            font-size: 1.8rem;
         }
         
         nav ul {
@@ -167,6 +178,7 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
         
         /* Hero Section */
@@ -202,7 +214,7 @@
         
         /* Features Section */
         .features {
-            background-color: white;
+            background-color: var(--white);
         }
         
         .features-grid {
@@ -233,11 +245,12 @@
         .feature-card h3 {
             margin-bottom: 15px;
             font-size: 1.5rem;
+            color: var(--primary-dark);
         }
         
         /* Industries Section */
         .industries {
-            background-color: #f9fafb;
+            background-color: #f0f7ff;
         }
         
         .industries-grid {
@@ -253,6 +266,7 @@
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary);
         }
         
         .industry-card:hover {
@@ -275,11 +289,12 @@
         .industry-card h3 {
             margin-bottom: 15px;
             font-size: 1.5rem;
+            color: var(--primary-dark);
         }
         
         /* Services Section */
         .services {
-            background-color: white;
+            background-color: var(--white);
         }
         
         .services-grid {
@@ -294,6 +309,7 @@
             border-radius: 10px;
             text-align: center;
             transition: all 0.3s ease;
+            border-bottom: 4px solid var(--primary);
         }
         
         .service-card:hover {
@@ -315,69 +331,7 @@
         .service-card h3 {
             margin-bottom: 15px;
             font-size: 1.5rem;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            background-color: #f9fafb;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .testimonial-text::before {
-            content: """;
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            left: 0;
-            top: -20px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .author-details h4 {
-            font-weight: 600;
-        }
-        
-        .author-details p {
-            color: #6b7280;
-            font-size: 0.9rem;
+            color: var(--primary-dark);
         }
         
         /* CTA Section */
@@ -401,7 +355,7 @@
         
         /* Contact Section */
         .contact {
-            background-color: white;
+            background-color: #f0f7ff;
         }
         
         .contact-container {
@@ -429,12 +383,14 @@
         
         .contact-details h4 {
             margin-bottom: 5px;
+            color: var(--primary-dark);
         }
         
         .contact-form {
-            background-color: var(--light);
+            background-color: var(--white);
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .form-group {
@@ -445,6 +401,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
+            color: var(--primary-dark);
         }
         
         .form-group input,
@@ -464,7 +421,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--primary-dark);
             color: white;
             padding: 60px 0 30px;
         }
@@ -489,7 +446,7 @@
             bottom: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--accent);
+            background-color: var(--primary-light);
         }
         
         .footer-col p {
@@ -514,7 +471,7 @@
         
         .footer-links a:hover {
             opacity: 1;
-            color: var(--accent);
+            color: var(--primary-light);
         }
         
         .social-links {
@@ -536,7 +493,7 @@
         }
         
         .social-links a:hover {
-            background-color: var(--accent);
+            background-color: var(--primary-light);
             transform: translateY(-3px);
         }
         
@@ -610,6 +567,22 @@
             section {
                 padding: 60px 0;
             }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .logo-img .line1 {
+                font-size: 1.2rem;
+            }
+            
+            .logo-img .line2 {
+                font-size: 1.4rem;
+            }
+            
+            .logo-img .line3 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -617,14 +590,16 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <div class="logo-img">SFH</div>
-                <h1>Safety <span>File</span> Hub</h1>
-            </div>
+            <a href="#home" class="logo">
+                <div class="logo-img">
+                    <span class="line1">SAFETY</span>
+                    <span class="line2">FILE</span>
+                    <span class="line3">HUB</span>
+                </div>
+            </a>
             <nav>
                 <ul id="menu">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#industries">Industries</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -643,8 +618,7 @@
             <p>Safety File Hub provides tailored safety files and ready-to-use templates, helping businesses in oil & gas, mining, manufacturing, and food handling stay compliant and safe.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn">Our Services</a>
-                <a href="#contact" class="btn btn-accent">Contact Us</a>
-                <a href="#industries" class="btn btn-safety">Industry Solutions</a>
+                <a href="#contact" class="btn btn-light">Contact Us</a>
             </div>
         </div>
     </section>
@@ -760,65 +734,10 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Compliance Audits</h3>
-                    <p>Thorough reviews of your existing safety documentation against regulatory requirements.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>Consultation Services</h3>
                     <p>Expert advice on implementing and maintaining your safety management system.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>Hear from businesses that have improved their safety compliance with our solutions</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>"Safety File Hub helped us completely revamp our safety documentation for our mining operations. Their templates were comprehensive and met all regulatory requirements."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">JM</div>
-                        <div class="author-details">
-                            <h4>John Mbeki</h4>
-                            <p>Safety Manager, Khanye Mining</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>"The food safety documentation we received was exceptional. It saved us countless hours and helped us pass our regulatory audit with flying colors."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">SN</div>
-                        <div class="author-details">
-                            <h4>Sarah Nkosi</h4>
-                            <p>Quality Director, FoodPro SA</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>"As a manufacturing plant, we needed machine-specific safety procedures. Safety File Hub delivered exactly what we needed at a fraction of the cost of consultants."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">DB</div>
-                        <div class="author-details">
-                            <h4>David Banda</h4>
-                            <p>Operations Manager, Precision Manufacturing</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -829,7 +748,7 @@
         <div class="container">
             <h2>Need Professional Safety Documentation?</h2>
             <p>Let Safety File Hub save you time and keep you compliant. Contact us today to discuss your needs.</p>
-            <a href="#contact" class="btn btn-accent">Get Started Today</a>
+            <a href="#contact" class="btn btn-light">Get Started Today</a>
         </div>
     </section>
 
@@ -929,7 +848,6 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
                         <li><a href="#industries">Industries</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -942,7 +860,6 @@
                         <li><a href="#">Food Handling</a></li>
                         <li><a href="#">Mining</a></li>
                         <li><a href="#">Manufacturing</a></li>
-                        <li><a href="#">Construction</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -973,7 +890,7 @@
         
         // Scroll animations
         window.addEventListener('scroll', function() {
-            const elements = document.querySelectorAll('.feature-card, .industry-card, .service-card, .testimonial-card');
+            const elements = document.querySelectorAll('.feature-card, .industry-card, .service-card');
             elements.forEach(element => {
                 const position = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
@@ -985,7 +902,7 @@
         });
         
         // Initialize elements for animation
-        document.querySelectorAll('.feature-card, .industry-card, .service-card, .testimonial-card').forEach(element => {
+        document.querySelectorAll('.feature-card, .industry-card, .service-card').forEach(element => {
             element.style.opacity = 0;
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'all 0.5s ease';
@@ -995,4 +912,4 @@
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
-                        </html>
+                                    </html>
