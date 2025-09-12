@@ -14,37 +14,18 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f9fafb;
-      color: #333;
+      background: #0a3d62; /* Strong blue */
+      color: white;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #0a3d62, #1e5a8a);
-      color: white;
-      padding: 4rem 1.5rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      padding: 4rem 1.5rem 3rem;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: -50%; width: 200%; height: 100%;
-      background: rgba(255,255,255,0.1);
-      transform: skewX(-30deg);
-      animation: shine 6s infinite linear;
-    }
-
-    @keyframes shine {
-      0% { left: -50%; }
-      100% { left: 150%; }
-    }
-
-    header svg {
-      width: 140px;
-      height: auto;
+    header img {
+      width: 160px;
       max-width: 100%;
       margin-bottom: 1rem;
     }
@@ -57,14 +38,14 @@
 
     header p {
       font-size: 1.2rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
     }
 
     nav {
-      background: #1e5a8a;
+      background: #14466c;
       padding: 0.8rem;
       position: sticky;
       top: 0;
@@ -88,11 +69,10 @@
       padding: 3.5rem 1.5rem;
       max-width: 1100px;
       margin: auto;
-      animation: fadeIn 1.5s ease;
     }
 
     section h2 {
-      color: #0a3d62;
+      color: #ffd32a;
       margin-bottom: 1.5rem;
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
@@ -100,11 +80,6 @@
     }
 
     section p { text-align: center; margin-bottom: 2rem; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     .services {
       display: grid;
@@ -117,23 +92,26 @@
       border-radius: 16px;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      color: #0a3d62;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25);
     }
 
-    .card h3 { margin-bottom: 1rem; font-size: 1.3rem; }
-
-    /* Contact form */
     form {
+      background: white;
+      color: #0a3d62;
+      padding: 2rem;
+      border-radius: 16px;
       max-width: 600px;
       margin: auto;
       display: grid;
       gap: 1.2rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
     input, textarea {
@@ -164,7 +142,7 @@
     }
 
     footer {
-      background: #0a3d62;
+      background: #14466c;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
@@ -183,20 +161,10 @@
 </head>
 <body>
   <header>
-    <!-- Shield Logo -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
-      <title>Safety File Hub Shield Logo</title>
-      <path d="M50 5 L90 20 V55 C90 85 70 110 50 115 C30 110 10 85 10 55 V20 L50 5Z" fill="#ffd32a" stroke="#fff" stroke-width="3"/>
-      <text x="50%" y="50%" text-anchor="middle" fill="#0a3d62" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">
-        Safety File
-      </text>
-      <text x="50%" y="65%" text-anchor="middle" fill="#0a3d62" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">
-        Hub
-      </text>
-    </svg>
+    <!-- New Professional Shield Logo -->
+    <img src="A_logo_for_%22Safety_File_Hub%22_is_displayed_in_the_i.png" alt="Safety File Hub Logo">
     <h1>Safety File Hub</h1>
     <p>The only portal to your safety file – we create professional safety files & ready-to-use templates.</p>
-    <a href="#contact" class="btn">Get Your Safety File</a>
   </header>
 
   <nav>
