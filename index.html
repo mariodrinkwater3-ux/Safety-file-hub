@@ -1,344 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safety File Hub</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffffff;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 3rem 1.5rem;
-      background: #ffffff; /* Changed to white */
-      color: #333;
-    }
-
-    header img.main-logo {
-      width: 280px; /* Bigger new logo */
-      max-width: 100%;
-      margin-bottom: 1.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-      color: #444; /* Changed text color for better contrast on white background */
-    }
-
-    /* NAVIGATION BAR */
-    nav {
-      background: #0a3d62;
-      padding: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover { color: #ffd32a; }
-
-    /* SECTIONS */
-    section {
-      padding: 3.5rem 1.5rem;
-      max-width: 1100px;
-      margin: auto;
-      background-color: #ffffff;
-    }
-
-    section h2 {
-      color: #0a3d62;
-      margin-bottom: 1.5rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    section p {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #444;
-    }
-
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-      color: #0a3d62;
-      border: 2px solid #0a3d62;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    }
-
-    /* CONTACT FORM */
-    form {
-      background: #f9fafb;
-      color: #0a3d62;
-      padding: 2rem;
-      border-radius: 16px;
-      max-width: 600px;
-      margin: auto;
-      display: grid;
-      gap: 1.2rem;
-      border: 2px solid #0a3d62;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.9rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    textarea { resize: vertical; min-height: 150px; }
-
-    button {
-      background: #0a3d62;
-      color: white;
-      padding: 0.9rem 1.8rem;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    button:hover {
-      background: #ffd32a;
-      color: #0a3d62;
-      transform: scale(1.05);
-    }
-
-    /* FOOTER */
-    footer {
-      background: #0a3d62;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-
-    footer p { margin-bottom: 0.5rem; }
-    footer .links { margin-top: 1rem; }
-    footer .links a {
-      color: #ffd32a;
-      margin: 0 0.7rem;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    /* Message box styles */
-    .message-box {
-      background: #0a3d62;
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 1rem;
-      display: none; /* Hidden by default */
-    }
-    .message-box.show {
-        display: block;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety File Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <!-- The source has been updated to the exact filename you provided on GitHub -->
-    <img src="file_00000000444c61fd91fa9c2083dd8f11.png" alt="Blue shield icon with a document and checkmark, and the text Safety File Hub" class="main-logo">
-    <p>Streamlining safety compliance with professional documentation & templates.</p>
-  </header>
+<body class="antialiased text-white">
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- Header -->
+    <header class="p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- Placeholder for the user's logo -->
+                <img src="https://placehold.co/32x32/4ade80/0d1117?text=Logo" alt="Safety File Hub Logo" class="rounded-full">
+                <h1 class="text-xl font-semibold">Safety File Hub</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-gray-400">About</a>
+                <a href="#industries" class="hover:text-gray-400">Industries</a>
+                <a href="#services" class="hover:text-gray-400">Services</a>
+                <a href="#contact" class="hover:text-gray-400">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      At <strong>Safety File Hub</strong>, we specialize in providing complete safety solutions, 
-      compliance documentation, and workplace risk management support.  
-      We make compliance simple, professional, and stress-free.
-    </p>
-  </section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 space-y-24">
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>📂 Safety File Compilation</h3>
-        <p>Complete and customized safety files tailored to your project needs.</p>
-      </div>
-      <div class="card">
-        <h3>📝 Safety Templates</h3>
-        <p>Ready-to-use safety file templates designed to save time and ensure compliance.</p>
-      </div>
-      <div class="card">
-        <h3>⚠️ Risk Assessments</h3>
-        <p>Detailed workplace hazard identification and mitigation strategies.</p>
-      </div>
-      <div class="card">
-        <h3>✅ Compliance Audits</h3>
-        <p>Ensure your site meets all legal and regulatory health & safety standards.</p>
-      </div>
-    </div>
-  </section>
+        <!-- Hero Section -->
+        <section class="text-center">
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight">Streamlining safety compliance with professional documentation & templates.</h2>
+            <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">The only portal to your safety file – we create professional safety files & ready-to-use templates.</p>
+        </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or need a safety file for your project? Get in touch today.</p>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" id="submitBtn">Send Message</button>
-    </form>
-    <div id="messageBox" class="message-box"></div>
-  </section>
+        <!-- Industries Section -->
+        <section id="industries">
+            <h3 class="text-3xl font-bold text-center mb-10">Solutions for Every Industry</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Industry Card: Mining -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://placehold.co/300x200/58a6ff/000?text=Mining" alt="Illustration of mining industry" class="rounded-md w-full h-auto mb-4">
+                    <h4 class="text-xl font-semibold">Mining</h4>
+                    <p class="mt-2 text-sm text-gray-400">Comprehensive safety files for high-risk mining environments.</p>
+                </div>
 
-  <footer>
-    <p>&copy; 2025 Safety File Hub. All Rights Reserved.</p>
-    <div class="links">
-      <a href="#about">About</a> | 
-      <a href="#services">Services</a> | 
-      <a href="#contact">Contact</a>
-    </div>
-  </footer>
+                <!-- Industry Card: Manufacturing -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://placehold.co/300x200/58a6ff/000?text=Manufacturing" alt="Illustration of manufacturing industry" class="rounded-md w-full h-auto mb-4">
+                    <h4 class="text-xl font-semibold">Manufacturing</h4>
+                    <p class="mt-2 text-sm text-gray-400">Solutions for factory safety, machinery, and production line compliance.</p>
+                </div>
 
-  <script type="module">
-    // Firebase imports
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+                <!-- Industry Card: Food Handling -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://placehold.co/300x200/58a6ff/000?text=Food+Handling" alt="Illustration of food handling industry" class="rounded-md w-full h-auto mb-4">
+                    <h4 class="text-xl font-semibold">Food Handling</h4>
+                    <p class="mt-2 text-sm text-gray-400">Specialized safety documents for food processing and handling facilities.</p>
+                </div>
 
-    // Global variables from the environment
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-    const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+                <!-- Industry Card: Oil & Gas -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://placehold.co/300x200/58a6ff/000?text=Oil+and+Gas" alt="Illustration of oil and gas industry" class="rounded-md w-full h-auto mb-4">
+                    <h4 class="text-xl font-semibold">Oil & Gas</h4>
+                    <p class="mt-2 text-sm text-gray-400">Essential documentation for managing hazards in the oil and gas sector.</p>
+                </div>
+            </div>
+        </section>
 
-    setLogLevel('Debug');
+        <!-- About Us Section -->
+        <section id="about" class="text-center">
+            <h3 class="text-3xl font-bold">About Us</h3>
+            <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
+                At Safety File Hub, we specialize in providing complete safety solutions, compliance documentation, and workplace risk management support. We make compliance simple, professional, and stress-free. Our mission is to empower businesses with the tools they need to create safer work environments.
+            </p>
+        </section>
 
-    let db;
-    let auth;
-    let userId;
+        <!-- Services Section -->
+        <section id="services" class="text-center">
+            <h3 class="text-3xl font-bold">Our Services</h3>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-semibold">Custom Safety Files</h4>
+                    <p class="mt-2 text-gray-400">Tailored safety files built from scratch to meet your specific industry and regulatory needs.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-semibold">Ready-to-Use Templates</h4>
+                    <p class="mt-2 text-gray-400">Download and customize professionally designed templates for a wide range of safety requirements.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-[#161b22] p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-semibold">Expert Consultation</h4>
+                    <p class="mt-2 text-gray-400">Get expert advice on risk assessments and safety management systems.</p>
+                </div>
+            </div>
+        </section>
 
-    // Initialize Firebase and set up auth listener
-    const app = initializeApp(firebaseConfig);
-    db = getFirestore(app);
-    auth = getAuth(app);
+        <!-- Contact Section -->
+        <section id="contact" class="text-center">
+            <h3 class="text-3xl font-bold">Contact Us</h3>
+            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Have a question or need a custom solution? Reach out to us, and we'll get back to you as soon as possible.</p>
+            <div class="mt-6">
+                <a href="mailto:info@safetyfilehub.com" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">Get in Touch</a>
+            </div>
+        </section>
+    </main>
 
-    onAuthStateChanged(auth, async (user) => {
-        if (user) {
-            userId = user.uid;
-        } else {
-            // Sign in anonymously if no auth token is provided
-            try {
-                await signInAnonymously(auth);
-                userId = auth.currentUser.uid;
-            } catch (error) {
-                console.error("Error signing in anonymously:", error);
-                userId = "anonymous_" + Math.random().toString(36).substring(2, 15);
-            }
-        }
-        console.log("Firebase initialized. User ID:", userId);
-        setupFormHandler();
-    });
+    <!-- Footer -->
+    <footer class="p-6 text-center text-gray-500">
+        <p>&copy; 2024 Safety File Hub. All rights reserved.</p>
+    </footer>
 
-    // Handle initial custom token sign-in if available
-    if (initialAuthToken) {
-        signInWithCustomToken(auth, initialAuthToken).catch((error) => {
-            console.error("Error signing in with custom token:", error);
-        });
-    }
-
-    // Function to set up the form submission handler
-    function setupFormHandler() {
-      const contactForm = document.getElementById('contactForm');
-      const submitBtn = document.getElementById('submitBtn');
-      const messageBox = document.getElementById('messageBox');
-
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = {
-          name: contactForm.name.value,
-          email: contactForm.email.value,
-          message: contactForm.message.value,
-          timestamp: new Date()
-        };
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-
-        try {
-          // Use the private user data path as per the security rules
-          const collectionPath = `artifacts/${appId}/users/${userId}/contact_submissions`;
-          await addDoc(collection(db, collectionPath), formData);
-          
-          showMessage('Message sent successfully!', 'success');
-          contactForm.reset();
-        } catch (error) {
-          console.error("Error adding document: ", error);
-          showMessage('Failed to send message. Please try again later.', 'error');
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-        }
-      });
-    }
-
-    // Function to show a message to the user
-    function showMessage(message, type) {
-      const messageBox = document.getElementById('messageBox');
-      messageBox.textContent = message;
-      messageBox.className = 'message-box show';
-      
-      // Optional: hide the message after a few seconds
-      setTimeout(() => {
-        messageBox.className = 'message-box';
-      }, 5000);
-    }
-  </script>
 </body>
 </html>
 
