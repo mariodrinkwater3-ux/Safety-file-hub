@@ -14,44 +14,42 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f4f6f8; /* Light professional background */
+      background: #ffffff; /* Clean white for main background */
       color: #333;
       line-height: 1.6;
     }
 
+    /* HEADER WITH BLACK BACKGROUND */
     header {
       text-align: center;
-      padding: 4rem 1.5rem 3rem;
+      padding: 3rem 1.5rem;
+      background: #000; /* Black area behind logo */
     }
 
     header img {
-      width: 180px;
+      width: 220px;
       max-width: 100%;
       margin-bottom: 1rem;
     }
 
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #0a3d62;
+      color: #ffffff; /* White under logo */
     }
 
     header p {
       font-size: 1.2rem;
-      margin-bottom: 1.5rem;
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #444;
+      margin: auto;
+      color: #ccc;
     }
 
+    /* NAVIGATION BAR */
     nav {
-      background: #0a3d62;
-      padding: 0.8rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: #0a3d62; /* Deep blue */
+      padding: 1rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -67,6 +65,7 @@
 
     nav a:hover { color: #ffd32a; }
 
+    /* SECTIONS */
     section {
       padding: 3.5rem 1.5rem;
       max-width: 1100px;
@@ -81,8 +80,13 @@
       text-align: center;
     }
 
-    section p { text-align: center; margin-bottom: 2rem; }
+    section p {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #444;
+    }
 
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -95,17 +99,19 @@
       padding: 2rem;
       text-align: center;
       color: #0a3d62;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      border: 2px solid #0a3d62;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
     }
 
+    /* CONTACT FORM */
     form {
-      background: white;
+      background: #f9fafb;
       color: #0a3d62;
       padding: 2rem;
       border-radius: 16px;
@@ -113,7 +119,8 @@
       margin: auto;
       display: grid;
       gap: 1.2rem;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      border: 2px solid #0a3d62;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
 
     input, textarea {
@@ -144,6 +151,7 @@
       transform: scale(1.05);
     }
 
+    /* FOOTER */
     footer {
       background: #0a3d62;
       color: white;
@@ -164,8 +172,8 @@
 </head>
 <body>
   <header>
-    <!-- New Professional Logo -->
-    <img src="A_logo_for_%22Safety_File_Hub%22_is_displayed_in_the_i.png" alt="Safety File Hub Logo">
+    <!-- Final Black Background Logo -->
+    <img src="safety-file-hub-logo.png" alt="Safety File Hub Logo">
     <h1>Safety File Hub</h1>
     <p>The only portal to your safety file – we create professional safety files & ready-to-use templates.</p>
   </header>
