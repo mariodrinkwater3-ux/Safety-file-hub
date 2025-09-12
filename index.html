@@ -8,49 +8,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #1f2937;
-    }
-    .nav-link:hover {
-      color: #2563eb;
-      transition: color 0.3s;
-    }
+    body { font-family: 'Inter', sans-serif; }
+    .nav-link:hover { color: #2563eb; transition: color 0.3s; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-in-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-white text-gray-800">
 
   <!-- Header -->
   <header class="p-6 bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-      <div class="flex flex-col items-center">
-        <img src="./file_00000000444c61fd91fa9c2083dd8f11.png" alt="Safety File Hub Logo" class="h-20 w-auto" />
+      <div class="flex items-center space-x-3">
+        <img src="./file_00000000444c61fd91fa9c2083dd8f11.png" alt="Safety File Hub Logo" class="h-14 w-auto" />
+        <h1 class="text-xl font-bold text-blue-600">Safety File Hub</h1>
       </div>
       <nav class="flex space-x-6 mt-4 md:mt-0">
-        <a href="#about" class="nav-link text-black font-semibold">About</a>
-        <a href="#services" class="nav-link text-black font-semibold">Services</a>
-        <a href="#industries" class="nav-link text-black font-semibold">Industries</a>
-        <a href="#contact" class="nav-link text-black font-semibold">Contact</a>
+        <a href="#about" class="nav-link font-semibold">About</a>
+        <a href="#services" class="nav-link font-semibold">Services</a>
+        <a href="#industries" class="nav-link font-semibold">Industries</a>
+        <a href="#contact" class="nav-link font-semibold">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-20">
-    <h1 class="text-5xl font-bold">Your Gateway to Professional Safety Documentation</h1>
-    <p class="mt-4 text-lg max-w-2xl mx-auto">
-      Safety File Hub (SFH) provides tailored safety files and ready-to-use templates, helping businesses stay compliant and safe.
-    </p>
-    <div class="mt-6">
-      <a href="#contact" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition transform hover:scale-105">
-        Get Started
-      </a>
+  <section class="relative bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center py-24">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="relative z-10 container mx-auto px-6">
+      <h1 class="text-5xl font-extrabold fade-in">Your Gateway to Professional Safety Documentation</h1>
+      <p class="mt-4 text-lg max-w-2xl mx-auto fade-in">
+        Safety File Hub (SFH) provides tailored safety files and ready-to-use templates, helping businesses stay compliant and safe.
+      </p>
+      <div class="mt-6 space-x-4 fade-in">
+        <a href="#contact" class="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition transform hover:scale-105">
+          Get Started
+        </a>
+        <a href="sample-safety-file.pdf" download class="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition transform hover:scale-105">
+          Download Free Sample
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 container mx-auto px-6 text-center">
+  <!-- About -->
+  <section id="about" class="py-20 container mx-auto px-6 text-center fade-in">
     <h2 class="text-3xl font-bold text-gray-900">About Us</h2>
     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
       At SFH, we simplify workplace compliance by delivering professional, tailored safety files. 
@@ -58,8 +60,8 @@
     </p>
   </section>
 
-  <!-- Industries Section -->
-  <section id="industries" class="py-16 bg-gray-50">
+  <!-- Industries -->
+  <section id="industries" class="py-20 bg-gray-50 fade-in">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Industries We Serve</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -87,8 +89,8 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-16 container mx-auto px-6 text-center">
+  <!-- Services -->
+  <section id="services" class="py-20 container mx-auto px-6 text-center fade-in">
     <h2 class="text-3xl font-bold text-gray-900">Our Services</h2>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
@@ -98,33 +100,24 @@
       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
         <h4 class="text-xl font-semibold">Ready-to-Use Templates</h4>
         <p class="mt-2 text-gray-600">Editable templates that you can download and implement immediately.</p>
+        <a href="sample-safety-file.pdf" download class="inline-block mt-4 px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition">
+          Download Free Sample
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-16 bg-blue-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <p class="text-gray-600">“Safety File Hub helped us pass compliance checks with zero issues. Highly professional!”</p>
-          <p class="mt-4 font-semibold text-blue-600">– John M, Construction</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <p class="text-gray-600">“Fast, reliable, and affordable. Their templates saved us hours of work.”</p>
-          <p class="mt-4 font-semibold text-blue-600">– Sarah K, Manufacturing</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <p class="text-gray-600">“Excellent support and guidance. They really know safety compliance.”</p>
-          <p class="mt-4 font-semibold text-blue-600">– Themba N, Mining</p>
-        </div>
-      </div>
-    </div>
+  <!-- CTA Banner -->
+  <section class="py-16 bg-blue-600 text-white text-center fade-in">
+    <h2 class="text-3xl font-bold">Need a Professional Safety File?</h2>
+    <p class="mt-4 text-lg">Let Safety File Hub save you time and keep you compliant.</p>
+    <a href="#contact" class="mt-6 inline-block px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-md hover:bg-yellow-500 transition transform hover:scale-105">
+      Get Started Today
+    </a>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 container mx-auto px-6 text-center">
+  <!-- Contact -->
+  <section id="contact" class="py-20 container mx-auto px-6 text-center fade-in">
     <h2 class="text-3xl font-bold text-gray-900">Contact Us</h2>
     <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
       Ready to simplify compliance? Get in touch today.
@@ -142,11 +135,20 @@
   <!-- Footer -->
   <footer class="p-6 text-center text-gray-500 bg-gray-100 mt-12">
     <p>&copy; 2024 Safety File Hub (SFH). All rights reserved.</p>
-    <p class="mt-2 text-sm">Contact: 071 895 5089 | <a href="mailto:info@safetyfilehub.co.za" class="text-blue-600 hover:underline">info@safetyfilehub.co.za</a></p>
   </footer>
 
   <script>
     lucide.createIcons();
+
+    // Fade-in animation on scroll
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
