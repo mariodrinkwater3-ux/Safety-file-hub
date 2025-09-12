@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Business Solutions</title>
+    <title>Safety File Hub - Professional Safety Documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -20,6 +20,7 @@
             --accent: #f59e0b;
             --light: #f3f4f6;
             --dark: #1f2937;
+            --safety-red: #dc2626;
         }
         
         html {
@@ -70,6 +71,14 @@
             background-color: #e99a0c;
         }
         
+        .btn-safety {
+            background-color: var(--safety-red);
+        }
+        
+        .btn-safety:hover {
+            background-color: #b91c1c;
+        }
+        
         .section-title {
             text-align: center;
             margin-bottom: 50px;
@@ -101,7 +110,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
         
         .logo {
@@ -109,14 +118,29 @@
             align-items: center;
         }
         
-        .logo img {
-            height: 40px;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--safety-red);
+            font-size: 1.8rem;
             margin-right: 10px;
+            background-color: #fef2f2;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 2px solid var(--safety-red);
         }
         
         .logo h1 {
             font-size: 1.5rem;
             color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--safety-red);
         }
         
         nav ul {
@@ -193,6 +217,7 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary);
         }
         
         .feature-card:hover {
@@ -210,38 +235,46 @@
             font-size: 1.5rem;
         }
         
-        /* About Section */
-        .about {
+        /* Industries Section */
+        .industries {
             background-color: #f9fafb;
         }
         
-        .about-content {
+        .industries-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
         
-        .about-image {
+        .industry-card {
+            background-color: white;
+            padding: 30px;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .about-text h2 {
+        .industry-icon {
             font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 20px;
+            height: 70px;
+            width: 70px;
+            line-height: 70px;
+            background-color: #eff6ff;
+            border-radius: 50%;
+            margin: 0 auto 20px;
         }
         
-        .about-text p {
-            margin-bottom: 20px;
-            color: #6b7280;
+        .industry-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
         
         /* Services Section */
@@ -305,6 +338,18 @@
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .testimonial-text::before {
+            content: """;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            left: 0;
+            top: -20px;
         }
         
         .testimonial-author {
@@ -318,12 +363,12 @@
             border-radius: 50%;
             overflow: hidden;
             margin-right: 15px;
-        }
-        
-        .author-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
         }
         
         .author-details h4 {
@@ -403,7 +448,8 @@
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #d1d5db;
@@ -504,10 +550,6 @@
         
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
             .contact-container {
                 grid-template-columns: 1fr;
             }
@@ -576,15 +618,15 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjEwIiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjMjU2M2ViIj5OZXh1czwvdGV4dD48L3N2Zz4=" alt="Nexus Logo">
-                <h1>Nexus</h1>
+                <div class="logo-img">SFH</div>
+                <h1>Safety <span>File</span> Hub</h1>
             </div>
             <nav>
                 <ul id="menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#industries">Industries</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu-btn" id="mobile-menu-toggle">
@@ -597,11 +639,12 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Empowering Your Business Growth</h1>
-            <p>We provide innovative solutions to help your business thrive in today's competitive market. Our expertise and dedication ensure your success.</p>
+            <h1>Your Gateway to Professional Safety Documentation</h1>
+            <p>Safety File Hub provides tailored safety files and ready-to-use templates, helping businesses in oil & gas, mining, manufacturing, and food handling stay compliant and safe.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn">Our Services</a>
                 <a href="#contact" class="btn btn-accent">Contact Us</a>
+                <a href="#industries" class="btn btn-safety">Industry Solutions</a>
             </div>
         </div>
     </section>
@@ -610,47 +653,70 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Us</h2>
-                <p>We deliver exceptional results with our unique approach and expertise</p>
+                <h2>Why Choose Safety File Hub</h2>
+                <p>We deliver exceptional safety documentation solutions with industry expertise</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3>Innovative Solutions</h3>
-                    <p>We create cutting-edge solutions tailored to your specific business needs.</p>
+                    <h3>Compliant Documentation</h3>
+                    <p>Our safety files meet all regulatory requirements and industry standards.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-industry"></i>
                     </div>
-                    <h3>Expert Team</h3>
-                    <p>Our team of professionals brings years of industry experience to the table.</p>
+                    <h3>Industry Specific</h3>
+                    <p>Tailored solutions for oil & gas, mining, manufacturing, and food handling.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Proven Results</h3>
-                    <p>We have a track record of delivering measurable results for our clients.</p>
+                    <h3>Time Saving</h3>
+                    <p>Ready-to-use templates that save you time and resources.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Industries Section -->
+    <section class="industries" id="industries">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjlhYWYzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzI1NjNlYiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkFib3V0IFVzIEltYWdlPC90ZXh0Pjwvc3ZnPg==" alt="About Nexus">
+            <div class="section-title">
+                <h2>Industries We Serve</h2>
+                <p>Specialized safety documentation for various high-risk industries</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Oil & Gas</h3>
+                    <p>Comprehensive safety files for upstream, midstream and downstream operations with hazard-specific protocols.</p>
                 </div>
-                <div class="about-text">
-                    <h2>About Our Company</h2>
-                    <p>Nexus was founded with a vision to transform businesses through innovative solutions and strategic guidance. With over a decade of experience, we've helped countless businesses achieve their goals.</p>
-                    <p>Our team of experts brings diverse skills and perspectives to every project, ensuring comprehensive solutions that address all aspects of your business challenges.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food Handling</h3>
+                    <p>HACCP plans, hygiene protocols and safety documentation for food processing facilities.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Mining</h3>
+                    <p>Safety files for surface and underground mining operations, including emergency procedures.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Manufacturing</h3>
+                    <p>Machine-specific safety procedures, lockout/tagout protocols and factory compliance documentation.</p>
                 </div>
             </div>
         </div>
@@ -661,10 +727,272 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>We offer a wide range of services to meet your business needs</p>
+                <p>Comprehensive safety documentation solutions for your business</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Custom Safety Files</h3>
+                    <p>Tailored files built for your company's exact needs and industry standards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <h3>Ready-to-Use Templates</h3>
+                    <p>Editable templates that you can download and implement immediately.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Document Updates</h3>
+                    <p>Regular updates to keep your safety documentation compliant with changing regulations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Training Materials</h3>
+                    <p>Comprehensive training guides and materials for your workforce.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Compliance Audits</h3>
+                    <p>Thorough reviews of your existing safety documentation against regulatory requirements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Consultation Services</h3>
+                    <p>Expert advice on implementing and maintaining your safety management system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from businesses that have improved their safety compliance with our solutions</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Safety File Hub helped us completely revamp our safety documentation for our mining operations. Their templates were comprehensive and met all regulatory requirements."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">JM</div>
+                        <div class="author-details">
+                            <h4>John Mbeki</h4>
+                            <p>Safety Manager, Khanye Mining</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The food safety documentation we received was exceptional. It saved us countless hours and helped us pass our regulatory audit with flying colors."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">SN</div>
+                        <div class="author-details">
+                            <h4>Sarah Nkosi</h4>
+                            <p>Quality Director, FoodPro SA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"As a manufacturing plant, we needed machine-specific safety procedures. Safety File Hub delivered exactly what we needed at a fraction of the cost of consultants."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">DB</div>
+                        <div class="author-details">
+                            <h4>David Banda</h4>
+                            <p>Operations Manager, Precision Manufacturing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Need Professional Safety Documentation?</h2>
+            <p>Let Safety File Hub save you time and keep you compliant. Contact us today to discuss your needs.</p>
+            <a href="#contact" class="btn btn-accent">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Ready to simplify compliance? Get in touch today</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Number</h4>
+                            <p>071 895 5089</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <p>info@safetyfilehub.co.za</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 8AM - 5PM<br>Saturday: 9AM - 1PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Serving clients throughout South Africa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="mining">Mining</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="food">Food Handling</option>
+                                <option value="oilgas">Oil & Gas</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Safety File Hub</h3>
+                    <p>We provide professional safety documentation solutions to help businesses stay compliant and protect their workforce.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Industries</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Oil & Gas</a></li>
+                        <li><a href="#">Food Handling</a></li>
+                        <li><a href="#">Mining</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                        <li><a href="#">Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> 071 895 5089</p>
+                    <p><i class="fas fa-envelope"></i> info@safetyfilehub.co.za</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 5PM</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Safety File Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('show');
+        });
+        
+        // Simple form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you shortly.');
+            this.reset();
+        });
+        
+        // Scroll animations
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.feature-card, .industry-card, .service-card, .testimonial-card');
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if (position < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Initialize elements for animation
+        document.querySelectorAll('.feature-card, .industry-card, .service-card, .testimonial-card').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.5s ease';
+        });
+        
+        // Trigger scroll once to check initial positions
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+                        </html>
