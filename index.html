@@ -6,14 +6,15 @@
   <title>Safety File Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff; /* Light background */
-      color: #1f2937; /* Dark gray text */
+      background-color: #ffffff;
+      color: #1f2937;
     }
     .nav-link:hover {
-      color: #2563eb; /* Blue on hover */
+      color: #2563eb;
       transition: color 0.3s;
     }
   </style>
@@ -21,97 +22,122 @@
 <body class="antialiased">
 
   <!-- Header -->
-  <header class="p-6 bg-white shadow-md">
+  <header class="p-6 bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
       <div class="flex flex-col items-center">
-        <!-- Logo -->
-        <img src="./file_00000000444c61fd91fa9c2083dd8f11.png" 
-             alt="Safety File Hub Logo" 
-             class="h-24 w-auto" />
+        <img src="./file_00000000444c61fd91fa9c2083dd8f11.png" alt="Safety File Hub Logo" class="h-20 w-auto" />
       </div>
       <nav class="flex space-x-6 mt-4 md:mt-0">
         <a href="#about" class="nav-link text-black font-semibold">About</a>
         <a href="#services" class="nav-link text-black font-semibold">Services</a>
+        <a href="#industries" class="nav-link text-black font-semibold">Industries</a>
         <a href="#contact" class="nav-link text-black font-semibold">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-6 py-12 space-y-24">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-20">
+    <h1 class="text-5xl font-bold">Your Gateway to Professional Safety Documentation</h1>
+    <p class="mt-4 text-lg max-w-2xl mx-auto">
+      Safety File Hub (SFH) provides tailored safety files and ready-to-use templates, helping businesses stay compliant and safe.
+    </p>
+    <div class="mt-6">
+      <a href="#contact" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition transform hover:scale-105">
+        Get Started
+      </a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="text-center">
-      <h2 class="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-        Your gateway to professional safety documentation.
-      </h2>
-      <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-        Safety File Hub (SFH) specializes in providing custom safety files and ready-to-use templates for businesses of all sizes.
-      </p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="py-16 container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-900">About Us</h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+      At SFH, we simplify workplace compliance by delivering professional, tailored safety files. 
+      Our goal is to empower your business with the right documentation to meet safety regulations confidently.
+    </p>
+  </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="text-center">
-      <h3 class="text-3xl font-bold text-gray-900">About Us</h3>
-      <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-        At SFH, we understand the complexities of workplace safety. Our mission is to simplify compliance by providing professional, tailored safety files that empower you to create a safer work environment and meet regulatory standards with confidence.
-      </p>
-    </section>
-
-    <!-- Industries Section -->
-    <section id="industries">
-      <h3 class="text-3xl font-bold text-center mb-10 text-gray-900">Serving Industries That Matter</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center flex flex-col items-center">
-          <h4 class="text-xl font-semibold">Mining</h4>
-          <p class="mt-2 text-sm text-gray-600">Comprehensive safety files for high-risk mining operations.</p>
+  <!-- Industries Section -->
+  <section id="industries" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Industries We Serve</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition">
+          <i data-lucide="mountain" class="w-10 h-10 mx-auto text-blue-600"></i>
+          <h4 class="text-xl font-semibold mt-4">Mining</h4>
+          <p class="mt-2 text-gray-600">Comprehensive safety files for high-risk mining operations.</p>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center flex flex-col items-center">
-          <h4 class="text-xl font-semibold">Manufacturing</h4>
-          <p class="mt-2 text-sm text-gray-600">Solutions for factory safety, machinery, and production line compliance.</p>
+        <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition">
+          <i data-lucide="factory" class="w-10 h-10 mx-auto text-blue-600"></i>
+          <h4 class="text-xl font-semibold mt-4">Manufacturing</h4>
+          <p class="mt-2 text-gray-600">Solutions for machinery, production line, and factory compliance.</p>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center flex flex-col items-center">
-          <h4 class="text-xl font-semibold">Food Handling</h4>
-          <p class="mt-2 text-sm text-gray-600">Specialized safety documents for food processing and handling facilities.</p>
+        <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition">
+          <i data-lucide="utensils" class="w-10 h-10 mx-auto text-blue-600"></i>
+          <h4 class="text-xl font-semibold mt-4">Food Handling</h4>
+          <p class="mt-2 text-gray-600">Specialized safety documents for food processing facilities.</p>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center flex flex-col items-center">
-          <h4 class="text-xl font-semibold">Oil & Gas</h4>
-          <p class="mt-2 text-sm text-gray-600">Essential documentation for managing hazards in the oil and gas sector.</p>
+        <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition">
+          <i data-lucide="flame" class="w-10 h-10 mx-auto text-blue-600"></i>
+          <h4 class="text-xl font-semibold mt-4">Oil & Gas</h4>
+          <p class="mt-2 text-gray-600">Hazard management and compliance for oil & gas operations.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" class="text-center">
-      <h3 class="text-3xl font-bold text-gray-900">Our Services</h3>
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h4 class="text-xl font-semibold">Custom Safety Files</h4>
-          <p class="mt-2 text-gray-600">We create tailored safety files from scratch to meet your company's specific needs and industry regulations.</p>
+  <!-- Services Section -->
+  <section id="services" class="py-16 container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-900">Our Services</h2>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+      <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <h4 class="text-xl font-semibold">Custom Safety Files</h4>
+        <p class="mt-2 text-gray-600">Tailored files built for your company’s exact needs and industry standards.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <h4 class="text-xl font-semibold">Ready-to-Use Templates</h4>
+        <p class="mt-2 text-gray-600">Editable templates that you can download and implement immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-blue-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <p class="text-gray-600">“Safety File Hub helped us pass compliance checks with zero issues. Highly professional!”</p>
+          <p class="mt-4 font-semibold text-blue-600">– John M, Construction</p>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h4 class="text-xl font-semibold">Ready-to-Use Templates</h4>
-          <p class="mt-2 text-gray-600">Purchase professionally designed, editable templates that you can customize and implement immediately.</p>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <p class="text-gray-600">“Fast, reliable, and affordable. Their templates saved us hours of work.”</p>
+          <p class="mt-4 font-semibold text-blue-600">– Sarah K, Manufacturing</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <p class="text-gray-600">“Excellent support and guidance. They really know safety compliance.”</p>
+          <p class="mt-4 font-semibold text-blue-600">– Themba N, Mining</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="text-center">
-      <h3 class="text-3xl font-bold text-gray-900">Contact Us</h3>
-      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-        Ready to simplify your safety compliance? Get in touch with us to discuss your needs.
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-900">Contact Us</h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      Ready to simplify compliance? Get in touch today.
+    </p>
+    <div class="mt-6 space-y-4">
+      <a href="tel:+27718955089" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition transform hover:scale-105">
+        Call Us: 071 895 5089
+      </a>
+      <p class="text-sm text-gray-600">
+        Or email us at <a href="mailto:info@safetyfilehub.co.za" class="text-blue-600 hover:underline">info@safetyfilehub.co.za</a>
       </p>
-      <div class="mt-6 space-y-4">
-        <a href="tel:+27718955089" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">
-          Call Us: 071 895 5089
-        </a>
-        <p class="text-sm text-gray-600">
-          Or email us at <a href="mailto:info@safetyfilehub.co.za" class="text-blue-600 hover:underline">info@safetyfilehub.co.za</a>
-        </p>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="p-6 text-center text-gray-500 bg-gray-100 mt-12">
@@ -119,5 +145,8 @@
     <p class="mt-2 text-sm">Contact: 071 895 5089 | <a href="mailto:info@safetyfilehub.co.za" class="text-blue-600 hover:underline">info@safetyfilehub.co.za</a></p>
   </footer>
 
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
