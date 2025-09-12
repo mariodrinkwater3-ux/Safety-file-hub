@@ -161,12 +161,27 @@
       text-decoration: none;
       font-size: 0.9rem;
     }
+
+    /* Message box styles */
+    .message-box {
+      background: #0a3d62;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 1rem;
+      display: none; /* Hidden by default */
+    }
+    .message-box.show {
+        display: block;
+    }
+
   </style>
 </head>
 <body>
   <header>
     <!-- New Logo -->
-    <img src="safety-file-hub-new.png" alt="Safety File Hub Logo" class="main-logo">
+    <img src="1000054913.png" alt="Blue shield icon with a document and checkmark, and the text Safety File Hub" class="main-logo">
     <p>The only portal to your safety file – we create professional safety files & ready-to-use templates.</p>
   </header>
 
@@ -210,12 +225,13 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Have questions or need a safety file for your project? Get in touch today.</p>
-    <form action="mailto:info@safetyfilehub.co.za" method="post" enctype="text/plain">
+    <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" id="submitBtn">Send Message</button>
     </form>
+    <div id="messageBox" class="message-box"></div>
   </section>
 
   <footer>
@@ -226,5 +242,101 @@
       <a href="#contact">Contact</a>
     </div>
   </footer>
+
+  <script type="module">
+    // Firebase imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // Global variables from the environment
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+    const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+    setLogLevel('Debug');
+
+    let db;
+    let auth;
+    let userId;
+
+    // Initialize Firebase and set up auth listener
+    const app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    auth = getAuth(app);
+
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            userId = user.uid;
+        } else {
+            // Sign in anonymously if no auth token is provided
+            try {
+                await signInAnonymously(auth);
+                userId = auth.currentUser.uid;
+            } catch (error) {
+                console.error("Error signing in anonymously:", error);
+                userId = "anonymous_" + Math.random().toString(36).substring(2, 15);
+            }
+        }
+        console.log("Firebase initialized. User ID:", userId);
+        setupFormHandler();
+    });
+
+    // Handle initial custom token sign-in if available
+    if (initialAuthToken) {
+        signInWithCustomToken(auth, initialAuthToken).catch((error) => {
+            console.error("Error signing in with custom token:", error);
+        });
+    }
+
+    // Function to set up the form submission handler
+    function setupFormHandler() {
+      const contactForm = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const messageBox = document.getElementById('messageBox');
+
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: contactForm.name.value,
+          email: contactForm.email.value,
+          message: contactForm.message.value,
+          timestamp: new Date()
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          // Use the private user data path as per the security rules
+          const collectionPath = `artifacts/${appId}/users/${userId}/contact_submissions`;
+          await addDoc(collection(db, collectionPath), formData);
+          
+          showMessage('Message sent successfully!', 'success');
+          contactForm.reset();
+        } catch (error) {
+          console.error("Error adding document: ", error);
+          showMessage('Failed to send message. Please try again later.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      });
+    }
+
+    // Function to show a message to the user
+    function showMessage(message, type) {
+      const messageBox = document.getElementById('messageBox');
+      messageBox.textContent = message;
+      messageBox.className = 'message-box show';
+      
+      // Optional: hide the message after a few seconds
+      setTimeout(() => {
+        messageBox.className = 'message-box';
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
+
