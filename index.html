@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safety Hub</title>
+  <title>Safety File Hub</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Roboto', sans-serif;
@@ -25,7 +22,7 @@
     header {
       background: linear-gradient(135deg, #0a3d62, #1e5a8a);
       color: white;
-      padding: 3rem 1.5rem;
+      padding: 4rem 1.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -46,40 +43,49 @@
     }
 
     header svg {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: auto;
+      max-width: 100%;
       margin-bottom: 1rem;
     }
 
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.7rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     nav {
       background: #1e5a8a;
       padding: 0.8rem;
-      text-align: center;
       position: sticky;
       top: 0;
       z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1rem;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #ffd32a;
-    }
+    nav a:hover { color: #ffd32a; }
 
     section {
-      padding: 3rem 1.5rem;
+      padding: 3.5rem 1.5rem;
       max-width: 1100px;
       margin: auto;
       animation: fadeIn 1.5s ease;
@@ -89,7 +95,11 @@
       color: #0a3d62;
       margin-bottom: 1.5rem;
       font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      text-align: center;
     }
+
+    section p { text-align: center; margin-bottom: 2rem; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -99,58 +109,94 @@
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .card {
       background: white;
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 2rem;
+      text-align: center;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+    }
+
+    .card h3 { margin-bottom: 1rem; font-size: 1.3rem; }
+
+    /* Contact form */
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    textarea { resize: vertical; min-height: 150px; }
+
+    button {
+      background: #ffd32a;
+      color: #0a3d62;
+      padding: 0.9rem 1.8rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #fbc531;
+      transform: scale(1.05);
     }
 
     footer {
       background: #0a3d62;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
       margin-top: 3rem;
     }
 
-    .btn {
-      display: inline-block;
-      background: #1e5a8a;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
+    footer p { margin-bottom: 0.5rem; }
+    footer .links { margin-top: 1rem; }
+    footer .links a {
+      color: #ffd32a;
+      margin: 0 0.7rem;
       text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn:hover {
-      background: #ffd32a;
-      color: #0a3d62;
-      transform: scale(1.05);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Inline SVG Logo -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-      <path d="M32 2L6 12v18c0 16 11 31 26 32 15-1 26-16 26-32V12L32 2z" fill="#ffd32a" stroke="#fff" stroke-width="2"/>
-      <path d="M22 32l6 6 14-14" stroke="#0a3d62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Shield Logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+      <title>Safety File Hub Shield Logo</title>
+      <path d="M50 5 L90 20 V55 C90 85 70 110 50 115 C30 110 10 85 10 55 V20 L50 5Z" fill="#ffd32a" stroke="#fff" stroke-width="3"/>
+      <text x="50%" y="50%" text-anchor="middle" fill="#0a3d62" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">
+        Safety File
+      </text>
+      <text x="50%" y="65%" text-anchor="middle" fill="#0a3d62" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">
+        Hub
+      </text>
     </svg>
-    <h1>Safety Hub</h1>
-    <p>Your partner in compliance, safety & workplace documentation</p>
-    <a href="#contact" class="btn">Request a Safety File</a>
+    <h1>Safety File Hub</h1>
+    <p>The only portal to your safety file – we create professional safety files & ready-to-use templates.</p>
+    <a href="#contact" class="btn">Get Your Safety File</a>
   </header>
 
   <nav>
@@ -162,9 +208,9 @@
   <section id="about">
     <h2>About Us</h2>
     <p>
-      At <strong>Safety Hub</strong>, we specialize in providing complete safety solutions, 
+      At <strong>Safety File Hub</strong>, we specialize in providing complete safety solutions, 
       compliance documentation, and workplace risk management support.  
-      Our mission is to make compliance simple, professional, and stress-free.
+      We make compliance simple, professional, and stress-free.
     </p>
   </section>
 
@@ -176,26 +222,38 @@
         <p>Complete and customized safety files tailored to your project needs.</p>
       </div>
       <div class="card">
+        <h3>📝 Safety Templates</h3>
+        <p>Ready-to-use safety file templates designed to save time and ensure compliance.</p>
+      </div>
+      <div class="card">
         <h3>⚠️ Risk Assessments</h3>
         <p>Detailed workplace hazard identification and mitigation strategies.</p>
       </div>
       <div class="card">
         <h3>✅ Compliance Audits</h3>
-        <p>Ensure your site meets legal and regulatory health & safety standards.</p>
+        <p>Ensure your site meets all legal and regulatory health & safety standards.</p>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Have questions or need a safety file for your project? Get in touch with us today.</p>
-    <p><strong>📞 Phone:</strong> <a href="tel:0718956089">071 895 6089</a></p>
-    <p><strong>✉️ Email:</strong> <a href="mailto:info@safetyhub.co.za">info@safetyhub.co.za</a></p>
-    <a href="mailto:info@safetyhub.co.za" class="btn">Send Us an Email</a>
+    <p>Have questions or need a safety file for your project? Get in touch today.</p>
+    <form action="mailto:info@safetyfilehub.co.za" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Safety Hub. All Rights Reserved.</p>
+    <p>&copy; 2025 Safety File Hub. All Rights Reserved.</p>
+    <div class="links">
+      <a href="#about">About</a> | 
+      <a href="#services">Services</a> | 
+      <a href="#contact">Contact</a>
+    </div>
   </footer>
 </body>
 </html>
