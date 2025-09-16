@@ -114,39 +114,47 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            flex: 1;
+            justify-content: center;
         }
         
         .logo-img {
-            height: 90px; /* Increased logo size */
+            height: 100px; /* Larger logo size */
             width: auto;
-            margin-right: 15px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Added subtle shadow */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
         
         .logo-text {
             display: flex;
             flex-direction: column;
+            margin-left: 15px;
         }
         
         .logo-text .line1 {
             color: var(--primary);
-            font-size: 1.8rem; /* Increased font size */
+            font-size: 1.8rem;
             font-weight: 800;
             line-height: 1;
         }
         
         .logo-text .line2 {
             color: var(--primary-dark);
-            font-size: 2rem; /* Increased font size */
+            font-size: 2rem;
             font-weight: 800;
             line-height: 1;
         }
         
         .logo-text .line3 {
             color: var(--primary);
-            font-size: 2.2rem; /* Increased font size */
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1;
+        }
+        
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
         }
         
         nav ul {
@@ -641,6 +649,11 @@
         @media (max-width: 768px) {
             .header-container {
                 padding: 15px 0;
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
             }
             
             nav ul {
@@ -665,6 +678,9 @@
             
             .mobile-menu-btn {
                 display: block;
+                position: absolute;
+                right: 20px;
+                top: 30px;
             }
             
             .hero h1 {
@@ -693,7 +709,7 @@
             }
             
             .logo-img {
-                height: 70px;
+                height: 80px;
             }
         }
         
@@ -711,7 +727,7 @@
             }
             
             .logo-img {
-                height: 60px;
+                height: 70px;
             }
             
             .logo-text {
@@ -839,4 +855,5 @@
             <div class="section-title">
                 <h2>Our Services</h2>
                 <p>Comprehensive safety documentation solutions for your business</p>
-            </div
+            </div>
+            <div class="
