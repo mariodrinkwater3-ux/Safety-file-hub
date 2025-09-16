@@ -117,9 +117,10 @@
         }
         
         .logo-img {
-            height: 80px; /* Increased from 60px to 80px */
+            height: 90px; /* Increased logo size */
             width: auto;
-            margin-right: 15px; /* Increased spacing */
+            margin-right: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Added subtle shadow */
         }
         
         .logo-text {
@@ -129,21 +130,21 @@
         
         .logo-text .line1 {
             color: var(--primary);
-            font-size: 1.6rem; /* Increased from 1.4rem */
+            font-size: 1.8rem; /* Increased font size */
             font-weight: 800;
             line-height: 1;
         }
         
         .logo-text .line2 {
             color: var(--primary-dark);
-            font-size: 1.8rem; /* Increased from 1.6rem */
+            font-size: 2rem; /* Increased font size */
             font-weight: 800;
             line-height: 1;
         }
         
         .logo-text .line3 {
             color: var(--primary);
-            font-size: 2rem; /* Increased from 1.8rem */
+            font-size: 2.2rem; /* Increased font size */
             font-weight: 800;
             line-height: 1;
         }
@@ -163,10 +164,26 @@
             font-weight: 500;
             transition: color 0.3s;
             font-size: 1.1rem;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
         }
         
         nav ul li a:hover {
             color: var(--primary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
         }
         
         .mobile-menu-btn {
@@ -182,16 +199,32 @@
             color: white;
             padding: 150px 0 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 100% 100%;
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .hero p {
@@ -223,12 +256,14 @@
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
         .feature-icon {
@@ -305,11 +340,13 @@
             text-align: center;
             transition: all 0.3s ease;
             border-bottom: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .service-card:hover {
             background-color: var(--primary);
             color: white;
+            transform: translateY(-5px);
         }
         
         .service-card:hover h3,
@@ -329,12 +366,95 @@
             color: var(--primary-dark);
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f0f7ff;
+            text-align: center;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary-light);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .testimonial-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .testimonial-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
         /* CTA Section */
         .cta {
             background: linear-gradient(to right, #2563eb, #3b82f6);
             color: white;
             text-align: center;
             padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 C50,100 50,100 100,0 L100,100 L0,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 100% 100%;
+        }
+        
+        .cta .container {
+            position: relative;
+            z-index: 1;
         }
         
         .cta h2 {
@@ -374,6 +494,8 @@
         .contact-icon {
             font-size: 1.5rem;
             color: var(--primary);
+            min-width: 30px;
+            text-align: center;
         }
         
         .contact-details h4 {
@@ -407,6 +529,15 @@
             border: 1px solid #d1d5db;
             border-radius: 5px;
             font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
         .form-group textarea {
@@ -550,19 +681,19 @@
             }
             
             .logo-text .line1 {
-                font-size: 1.4rem; /* Adjusted for mobile */
+                font-size: 1.4rem;
             }
             
             .logo-text .line2 {
-                font-size: 1.6rem; /* Adjusted for mobile */
+                font-size: 1.6rem;
             }
             
             .logo-text .line3 {
-                font-size: 1.8rem; /* Adjusted for mobile */
+                font-size: 1.8rem;
             }
             
             .logo-img {
-                height: 70px; /* Slightly smaller on mobile */
+                height: 70px;
             }
         }
         
@@ -580,11 +711,11 @@
             }
             
             .logo-img {
-                height: 60px; /* Adjusted for very small screens */
+                height: 60px;
             }
             
             .logo-text {
-                display: none; /* Hide text on very small screens */
+                display: none;
             }
         }
     </style>
@@ -594,7 +725,7 @@
     <header>
         <div class="container header-container">
             <a href="#home" class="logo">
-                <!-- Updated logo with larger size -->
+                <!-- Updated logo with larger size and centered -->
                 <img src="https://raw.githubusercontent.com/mariodrinkwater3-ux/Safety-file-hub/refs/heads/main/file_00000000a378622f80e8439b6a599b80.png" alt="Safety File Hub Logo" class="logo-img">
                 <div class="logo-text">
                     <span class="line1">SAFETY</span>
@@ -607,6 +738,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#industries">Industries</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu-btn" id="mobile-menu-toggle">
@@ -641,21 +773,21 @@
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Compliant Documentation</h3>
-                    <p>Our safety files meet all regulatory requirements and industry standards.</p>
+                    <p>Our safety files meet all regulatory requirements and industry standards, ensuring full compliance.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-industry"></i>
                     </div>
                     <h3>Industry Specific</h3>
-                    <p>Tailored solutions for oil & gas, mining, manufacturing, and food handling.</p>
+                    <p>Tailored solutions for oil & gas, mining, manufacturing, food handling, and other high-risk industries.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Time Saving</h3>
-                    <p>Ready-to-use templates that save you time and resources.</p>
+                    <p>Ready-to-use templates that save you time and resources while maintaining quality standards.</p>
                 </div>
             </div>
         </div>
@@ -707,214 +839,4 @@
             <div class="section-title">
                 <h2>Our Services</h2>
                 <p>Comprehensive safety documentation solutions for your business</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
-                    <h3>Custom Safety Files</h3>
-                    <p>Tailored files built for your company's exact needs and industry standards.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-download"></i>
-                    </div>
-                    <h3>Ready-to-Use Templates</h3>
-                    <p>Editable templates that you can download and implement immediately.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Document Updates</h3>
-                    <p>Regular updates to keep your safety documentation compliant with changing regulations.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Training Materials</h3>
-                    <p>Comprehensive training guides and materials for your workforce.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Consultation Services</h3>
-                    <p>Expert advice on implementing and maintaining your safety management system.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Need Professional Safety Documentation?</h2>
-            <p>Let Safety File Hub save you time and keep you compliant. Contact us today to discuss your needs.</p>
-            <a href="#contact" class="btn btn-light">Get Started Today</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Ready to simplify compliance? Get in touch today</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone Number</h4>
-                            <p>071 895 5089</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@safetyfilehub.co.za</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Working Hours</h4>
-                            <p>Monday - Friday: 8AM - 5PM<br>Saturday: 9AM - 1PM</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Serving clients throughout South Africa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="industry">Industry</label>
-                            <select id="industry" required>
-                                <option value="">Select Industry</option>
-                                <option value="mining">Mining</option>
-                                <option value="manufacturing">Manufacturing</option>
-                                <option value="food">Food Handling</option>
-                                <option value="oilgas">Oil & Gas</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3>About Safety File Hub</h3>
-                    <p>We provide professional safety documentation solutions to help businesses stay compliant and protect their workforce.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#industries">Industries</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Industries</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Oil & Gas</a></li>
-                        <li><a href="#">Food Handling</a></li>
-                        <li><a href="#">Mining</a></li>
-                        <li><a href="#">Manufacturing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone"></i> 071 895 5089</p>
-                    <p><i class="fas fa-envelope"></i> info@safetyfilehub.co.za</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 5PM</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Safety File Hub. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-            document.getElementById('menu').classList.toggle('show');
-        });
-        
-        // Simple form validation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you shortly.');
-            this.reset();
-        });
-        
-        // Scroll animations
-        window.addEventListener('scroll', function() {
-            const elements = document.querySelectorAll('.feature-card, .industry-card, .service-card');
-            elements.forEach(element => {
-                const position = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                if (position < screenPosition) {
-                    element.style.opacity = 1;
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        });
-        
-        // Initialize elements for animation
-        document.querySelectorAll('.feature-card, .industry-card, .service-card').forEach(element => {
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'all 0.5s ease';
-        });
-        
-        // Trigger scroll once to check initial positions
-        window.dispatchEvent(new Event('scroll'));
-    </script>
-</body>
-</html>
+            </div
